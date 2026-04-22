@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+ <html lang="pt-BR">
+<head>
+<meta Charset="UTF-8">
+<title>Pizzaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="banner">
+    <h1>Pizzaria do Fulano</h1>
+    <h2>Avenida Fulano de Tal, 3-67 - Vila Tal , Bauru, SP 167071-467</h2>
+    <h3>Aberto de Domingo a Domingo das 17:00 as 00:00</h3>
+</div>
+</h2>
+</div>
+<div class="textosa">
+    <h1>Peça já sua pizza!</h1>
+    <h2>WhatsApp:(14) 676767-67</h2>
+</div>
+<a href="pedir.html" class="link-pedir btn btn-danger">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>Pedir!</a>
+    <h1>Nossos Sabores!</h1>
+
+<div class="sabores1">
+    <ul class="sabores1">
+        <li>Frango c/ bacon R$26,90</li>
+        <li>Mussarela c/ bacon R$26,90</li>
+        <li>Carne c/ queijo R$26,90</li>
+        <li>Quatro queijos R$34,00</li>
+         <li>Portuguesa R$29,90</li>
+        <li>Calabressa R$26,90</li>
+        <li>Brocolis c/ bacon R$26,90</li>
+        <li>Sardinha R$23,00</li>
+    </ul>
+            <h1>Combos!</h1>
+    <ul class="combos">
+        <li>Portuguesa + Refri 2l R$32,90</li>
+        <li>Calabressa + Refri 2l R$32,90</li>
+        <li>Pizza + Broto R$36,90</li>
+        <li>2Pizzas + Refri R$43,00</li>
+    </ul>
+    <h1>Pizza Broto!</h1>
+    <ul class="combos">
+        <li>Chocolate R$27,90</li>
+        <li>Doce de Leite R$27,90</li>
+        <li>Nutella R$30,90</li>
+        <li>Kit Kat 29,00</li>
+    </ul>
+
+
+</body>
+</html>
