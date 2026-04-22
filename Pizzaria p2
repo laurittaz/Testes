@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<title>pedir</title>
+</head>
+<body>
+ <div class="pedido">
+ <h1>Faça seu Pedido!</h1>
+</div>
+    <a href="index.html" class="link-voltar">
+    <i class="fa fa-arrow-left"></i> Voltar</a>
+<div class="pedido2">
+	<h2>O que voce vai querer hoje?</h2>
+	<h3>Pizzas Normais:</h3>
+</div>
+<div class="pedidos">
+<label>
+
+  <li><input type="checkbox" name="pedido[]" value="Frango c/ bacon R$26,90" checked>
+  Frango c/ bacon R$26,90
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Mussarela c/ bacon R$26,90">
+  Mussarela c/ bacon R$26,90
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Carne c/ queijo R$26,90" checked>
+  Carne c/ queijo R$26,90
+</label><br></li>
+
+<label>
+ <li><input type="checkbox" name="pedido[]" value="Quatro queijos R$34,00">
+  Quatro queijos R$34,00
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Portuguesa R$29,90">
+  Portuguesa R$29,90
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Calabresa R$26,90">
+  Calabresa R$26,90
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Brocolis c/ bacon R$26,90">
+  Brócolis c/ bacon R$26,90
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Sardinha R$23,00">
+  Sardinha R$23,00
+</label><br></li>
+</div>
+
+<div class="pedido2">
+  <h3>Combos:</h3>
+</div>
+<div class="pedidos">
+<label>
+<li><input type="checkbox" name="pedido[]" value="Portuguesa + Refri 2l R$32,90" checked>
+ Portuguesa + Refri 2l R$32,90
+</label><br></li>
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Calabressa + Refri 2l R$32,90">
+  Calabressa + Refri 2l R$32,90
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Pizza + Broto R$36,90" checked>
+  Pizza + Broto R$36,90
+</label><br></li>
+
+<label>
+ <li><input type="checkbox" name="pedido[]" value="2Pizzas + Refri R$43,00">
+2Pizzas + Refri R$43,00
+</label><br></li>
+</div>
+<div class="pedido2">
+  <h3>Pizza Broto:</h3>
+</div>
+<div class="pedidos">
+<label>
+<li><input type="checkbox" name="pedido[]" value="Chocolate R$27,90" checked>
+Chocolate R$27,90
+</label><br></li>
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Doce de Leite R$27,90">
+  Doce de Leite R$27,90
+</label><br></li>
+
+<label>
+  <li><input type="checkbox" name="pedido[]" value="Nutella R$30,90" checked>
+  Nutella R$30,90
+</label><br></li>
+
+<label>
+ <li><input type="checkbox" name="pedido[]" value="Kit Kat 29,00">
+Kit Kat 29,00
+</label><br></li>
+</div>
+<div class="resumo-pedido">
+  <h3>Seu pedido:</h3>
+  <ul id="lista-itens-resumo">
+    <li>Nenhum item selecionado</li>
+  </ul>
+  <script>
+  function atualizarResumo() {
+    // Seleciona todos os checkboxes de pedido
+    const checkboxes = document.querySelectorAll('input[name="pedido[]"]');
+    let itensSelecionados = [];
+    let total = 0;
+
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        const textoCompleto = checkbox.value;
+        // Extrai o preço do final do texto (ex: "Frango c/ bacon R$26,90")
+        const match = textoCompleto.match(/R\$([0-9,]+)$/);
+        if (match) {
+          let preco = parseFloat(match[1].replace(',', '.'));
+          total += preco;
+        }
+        // Remove o preço do texto para mostrar só a descrição
+        const nomeItem = textoCompleto.replace(/ R\$[0-9,]+$/, '');
+        itensSelecionados.push(nomeItem);
+      }
+    });
+
+    // Atualiza a lista no resumo
+    const listaUl = document.getElementById('lista-itens-resumo');
+    const totalSpan = document.getElementById('total-resumo');
+
+    if (itensSelecionados.length === 0) {
+      listaUl.innerHTML = '<li>Nenhum item selecionado</li>';
+    } else {
+      listaUl.innerHTML = itensSelecionados.map(item => `<li>${item}</li>`).join('');
+    }
+
+    totalSpan.innerText = total.toFixed(2).replace('.', ',');
+  }
+
+  // Adiciona evento de 'change' a todos os checkboxes
+  document.querySelectorAll('input[name="pedido[]"]').forEach(checkbox => {
+    checkbox.addEventListener('change', atualizarResumo);
+  });
+
+  // Executa uma vez ao carregar a página para mostrar itens que já venham marcados (checked)
+  window.addEventListener('DOMContentLoaded', atualizarResumo);
+</script>
+
+  <p><strong>Total: R$ <span id="total-resumo">0.00</span></strong></p>
+</div>
+
+ <form id="form-pedido" action="#" method="post">
+  <div class="formulario"> 
+    Nome: <input type="text" id="nome" name="nome" placeholder="Digite seu nome" maxlength="30" required>
+    <br><br>
+    Endereço: <input type="text" id="endereco" name="endereco" placeholder="Digite seu endereço" maxlength="90" required>
+  </div>
+  <br><br>
+  <button type="submit" class="btn btn-danger"> <i class="fa fa-arrow-right"></i> Enviar</button>
+  <button type="reset" class="btn btn-danger"><i class="fa fa-arrow-right"></i> Limpar</button>
+</form>
+
+<script>
+  document.getElementById('form-pedido').addEventListener('submit', function(e) {
+    e.preventDefault(); // impede o envio tradicional
+
+    // Coleta nome e endereço
+    const nome = document.getElementById('nome').value.trim();
+    const endereco = document.getElementById('endereco').value.trim();
+
+    if (nome === '' || endereco === '') {
+      alert('Por favor, preencha nome e endereço.');
+      return;
+    }
+
+    // Coleta os itens selecionados e o total do resumo
+    const listaItens = document.getElementById('lista-itens-resumo');
+    const itensSelecionados = [];
+    for (let li of listaItens.querySelectorAll('li')) {
+      if (li.innerText !== 'Nenhum item selecionado') {
+        itensSelecionados.push(li.innerText);
+      }
+    }
+
+    const totalTexto = document.getElementById('total-resumo').innerText;
+    const total = totalTexto.replace(',', '.'); // formata para exibição
+
+    if (itensSelecionados.length === 0) {
+      alert('Selecione pelo menos um item para fazer o pedido.');
+      return;
+    }
+
+    // Monta a mensagem
+    let mensagem = `*NOVO PEDIDO PIZZARIA*%0A`; // %0A = quebra de linha no WhatsApp
+    mensagem += `*Nome:* ${nome}%0A`;
+    mensagem += `*Endereço:* ${endereco}%0A`;
+    mensagem += `*Itens:*%0A`;
+    itensSelecionados.forEach(item => {
+      mensagem += `- ${item}%0A`;
+    });
+    mensagem += `*Total:* R$ ${total}%0A`;
+    mensagem += `%0A_Obrigado! Aguardamos a confirmação._`;
+
+    // Substitua o número abaixo pelo seu número de WhatsApp (com código do país e DDD, sem espaços)
+    const numeroWhatsApp = '5514997297669'; // EXEMPLO: 55 11 99999-9999 -> escrever 5511999999999
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+
+    // Abre o WhatsApp em nova guia
+    window.open(url, '_blank');
+  });
+</script>
