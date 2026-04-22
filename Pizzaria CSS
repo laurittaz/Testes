@@ -1,0 +1,272 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+.banner {
+    background-image: url("img/imgp4.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+    position: relative;      /* Necessário para o before */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Camada preta transparente SOMENTE dentro do banner */
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Preto 50% transparente */
+    z-index: 1;
+}
+
+/* Título fica por cima da camada escura */
+.banner h1 {
+    font-family:Verdana;
+    text-align: center;
+    color: white;
+    font-size: 90px;
+    background-color: transparent; 
+    padding: 20px 30px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+li{
+	padding: 10px;
+ font-size: 20px;
+ font-family: arial;
+}
+.btn-danger {
+    padding: 20px 80px !important;
+    font-size: 30px !important; 
+    margin: 20px; 
+    background-color:#dc3444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+} 
+
+.sabores1 {
+    list-style: none;   /* remove as bolinhas */
+    padding: 10px;
+    margin: 0;
+    flex: 1;            /* cada grupo ocupa espaço igual */
+    min-width: 200px;   /* largura mínima antes de quebrar */
+
+}
+
+.combos {
+    list-style: none;   /* remove as bolinhas */
+    padding: 10px;
+    margin: 0;
+    flex: 1;            /* cada grupo ocupa espaço igual */
+    min-width: 200px;   /* largura mínima antes de quebrar */
+}
+
+.combos li {
+    padding: 10px;
+    font-size: 20px;
+    font-family: arial;
+    background-color: #f9f9f9; /* opcional, só para visualizar */
+    margin-bottom: 5px;
+    border-radius: 5px; 
+    }
+    .sabores1 li {
+    padding: 10px;
+    font-size: 20px;
+    font-family: arial;
+    background-color: #f9f9f9; /* opcional, só para visualizar */
+    margin-bottom: 5px;
+    border-radius: 5px;
+
+}
+    
+.banner h2 {
+    font-size: 24px;
+    font-family: arial;
+    font-weight: normal;
+    color: white;
+    z-index: 2;
+    margin: 0;
+    position: relative;
+    text-align: left;
+}
+.banner h3 {
+    font-size: 24px;
+    font-family: arial;
+    font-weight: normal;
+    color: white;
+    z-index: 2;
+    margin: 0;
+    position: relative;
+    text-align: left;
+}
+.textosa h1 {
+	font-size: 90px;
+	text-align: center;
+}
+.textosa h2{
+	font-size: 20px;
+	text-align: center;
+}
+h1 {
+	padding: 10px;
+	margin: 10px;
+}
+.link-voltar {
+  color:black;
+  font-size: 18px;
+   text-decoration: none;
+  font-weight: bold;
+ }
+ .pedido {
+        background-image: url("img/imgp4.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 100%;
+    position: relative;      /* Necessário para o before */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+ .pedido h1 {
+ 	font-family: Verdana;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    background-color: transparent; 
+    padding: 20px 30px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}  
+ .pedido::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Preto 50% transparente */
+    z-index:1;
+}
+ .pedidos{
+ 	font-size: 30px;
+ 	font-family: Arial;
+ 	color: white;
+ 	padding: 20px;
+}
+.pedidos li {
+    padding: 10px;
+    font-size: 20px;
+    font-family: arial;
+    background-color: #dc3444; /* opcional, só para visualizar */
+	margin-bottom: 5px;
+    border-radius: 5px;
+    }
+.pedido2 h2{
+	font-family: arial;
+	font-size: 40px;
+	text-align: center;
+}
+.pedido2 h3{
+	font-family: arial;
+	font-size: 30px;
+	padding: 20px;
+	margin: 0;
+    color: black;
+}
+.link-voltar {
+	font-size: 20px;
+	font-family: arial;
+	padding: 20px;
+}
+.formulario {
+ font-family: Arial;
+ font-size: 30px;
+ place: 30px;
+}
+  .formulario input {
+    width: 50%;    
+    padding: 10px;      /* aumenta a altura interna */
+    font-size: 16px;    /* texto maior */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .resumo-pedido {
+    background-color: #dc3444;       /* fundo claro, combinando com o tom de pizza */
+    border-left: 8px solid #e75a68;  /* mesma cor dos botões (vermelho) */
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin: 30px 20px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.resumo-pedido h3 {
+    font-size: 28px;
+    color:white;
+    margin: 0 0 15px 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Lista de itens no resumo */
+#lista-itens-resumo {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+#lista-itens-resumo li {
+    background-color: #f8f9fa;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    border-left: 4px solid #dc3444;
+}
+
+/* Mensagem quando não há itens */
+#lista-itens-resumo li:first-child:only-child {
+    background-color: white;
+    color: #6c757d;
+    border-left-color: #6c757d;
+    font-style: italic;
+}
+
+/* Total do pedido */
+.resumo-pedido p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0 0 0;
+    padding-top: 10px;
+    border-top: 2px dashed #dc3444;
+    text-align: right;
+    color: #333;
+}
+
+#total-resumo {
+    color: #dc3444;
+    font-size: 28px;
+    background-color: #ffe6e8;
+    padding: 4px 12px;
+    border-radius: 30px;
+    display: inline-block;
+}
